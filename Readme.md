@@ -16,7 +16,7 @@ Build tools with `go build ./...` then find the named binaries in the top level 
 
  `hcp-packer`
 
-  - [ ] `list-buckets` - list all buckets in the registry
+  - [x] `list-buckets` - list all buckets in the registry
   - [ ] `list-iterations --bucket ID|NAME` - list all iterations for a bucket
   - [ ] `list-channels --bucket ID|NAME` - list all channels for a bucket
   - [ ] `set-channel-iteration --bucket ID|NAME --channel ID|NAME --iteration ID` - set a channel to a specific iteration
