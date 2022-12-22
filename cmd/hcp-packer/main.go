@@ -11,17 +11,6 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-/*
-Styling after AWS cli tool for now
-
-- List all buckets: list-buckets
-- Show bucket details: get-bucket --bucket NAME
-- List iteration for a specific bucket: list-iteration --bucket NAME
-- List channels for a specific bucket: list-channels --bucket NAME
-- Change channel interation: put-channel --bucket NAME --iteration ID
-
-*/
-
 func main() {
 	app := &cli.App{
 		Name:  "hcp-packer",
@@ -55,6 +44,20 @@ func main() {
 						fmt.Printf("%s\t%s\n", b.Slug, b.ID)
 					}
 
+					return nil
+				},
+			},
+
+			{
+				Name: "list-iterations",
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:  "bucket",
+						Usage: "Bucket ID",
+					},
+				},
+				Action: func(cCtx *cli.Context) error {
+					fmt.Println("zomg listing iterations for ", cCtx.String("bucket"))
 					return nil
 				},
 			},
